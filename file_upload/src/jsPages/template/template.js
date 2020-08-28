@@ -1,7 +1,7 @@
 import React from "react";
 import "antd/dist/antd.css";
 import "./template.css";
-import {Layout, Menu} from "antd";
+import {Layout, Menu, message} from "antd";
 import axios from "axios"
 import {
     MenuUnfoldOutlined,
@@ -32,7 +32,6 @@ class MyTemplate extends React.Component {
     }
     componentDidMount() {
         window.addEventListener("resize", this.handleResize.bind(this));
-        console.log(this.state.height);
         const lastUser = localStorage.getItem("lastUser");
         if(lastUser){
             this.setUserName(lastUser)
@@ -93,7 +92,7 @@ class MyTemplate extends React.Component {
                 });
             }
         }).catch(function (error) {
-            console.log(error);
+            message.error(error);
         });
     }
     handelLoginClick(){

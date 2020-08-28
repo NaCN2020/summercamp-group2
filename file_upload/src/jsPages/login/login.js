@@ -36,7 +36,7 @@ class Login extends React.Component {
                     message.error("wrong password or user not exist!");
                 }
             }).catch(function (error) {
-                console.log(error);
+                message.error(error);
             });
         }
     }
