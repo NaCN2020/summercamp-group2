@@ -2,7 +2,7 @@ import React from "react";
 import "antd/dist/antd.css";
 import "./template.css";
 import {Layout, Menu, message} from "antd";
-import axios from "axios"
+import axios from "axios";
 import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
@@ -34,7 +34,7 @@ class MyTemplate extends React.Component {
         window.addEventListener("resize", this.handleResize.bind(this));
         const lastUser = localStorage.getItem("lastUser");
         if(lastUser){
-            this.setUserName(lastUser)
+            this.setUserName(lastUser);
         }else {
             this.setState({
                 loginVisible: true,
@@ -43,7 +43,7 @@ class MyTemplate extends React.Component {
         //const button = document.getElementsByClassName("login")[0];
 
     }
-    handleResize = e => {
+    handleResize = (e) => {
         this.setState({
             height: e.target.innerHeight,
         });
@@ -65,9 +65,9 @@ class MyTemplate extends React.Component {
             curPage: page,
         });
     }
-    setFiles(files){
+    setFiles(fileList){
         this.setState({
-            files: files,
+            files: fileList,
         });
     }
     loginVisibility(visible){
@@ -76,15 +76,15 @@ class MyTemplate extends React.Component {
         });
 
     }
-    setUserName(userName) {
+    setUserName(user) {
         this.setState({
-            userName: userName,
+            userName: user,
         });
         axios.get("http://101.200.153.106:3389/getFiles", {
             // 成功登录后获取用户名对应的文件列表
             params: {
-                userName: userName,
-            }}).then(response => {
+                userName: user,
+            }}).then((response) => {
             let data = response.data;
             if(data.length>0){
                 this.setState({
@@ -123,11 +123,11 @@ class MyTemplate extends React.Component {
                         <div className={"user-name"}> {this.state.userName.length>0?this.state.userName:"NULL"} </div>
                         <button className={"login"} onClick={()=>this.handelLoginClick()}> {this.state.userName.length>0?"logout":"login"} </button>
                     </div>
-                    <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                        <Menu.Item key="1" icon={<FileAddOutlined />} onClick={()=>this.setPage("upload")}>
+                    <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+                        <Menu.Item key="1" icon={<FileAddOutlined />} onClick={() => this.setPage("upload")}>
                             Add new files
                         </Menu.Item>
-                        <Menu.Item key="2" icon={<FolderOutlined />} onClick={()=>this.setPage("extract")}>
+                        <Menu.Item key="2" icon={<FolderOutlined />} onClick={() => this.setPage("extract")}>
                             My files
                         </Menu.Item>
                     </Menu>

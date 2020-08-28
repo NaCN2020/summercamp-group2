@@ -28,7 +28,7 @@ class ExtractPage extends React.Component{
         if(fileType==="txt"||fileType==="md"){
             axios.get("http://101.200.153.106:3389/markdown", {
                 params: {file: fileName}
-            }).then(response => {
+            }).then((response) => {
                 this.setState({
                     file: fileName,
                     fileContent: <textarea className={"preview-text"} value={response.data||""} readOnly={true}/>,
@@ -63,8 +63,9 @@ class ExtractPage extends React.Component{
             fileContent: "",
             formItems: null,
         });
-        if(this.formRef.current)
+        if(this.formRef.current){
             this.formRef.current.resetFields();
+        }
     }
     render() {
         return (

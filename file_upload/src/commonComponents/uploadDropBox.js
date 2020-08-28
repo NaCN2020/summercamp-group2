@@ -60,7 +60,7 @@ class FileDropBox extends React.Component{
         for (let i=0;i<appendList.length;i++){
             files.push(appendList[i].name);
             let reader = new FileReader();
-            reader.onload = e => {
+            reader.onload = (e) => {
                 // 读文件，上传
                 axios.post("http://101.200.153.106:3389/upload",
                     {params: {"userName": this.props.userName,
@@ -71,7 +71,7 @@ class FileDropBox extends React.Component{
                         message.error(error);
                     });
             };
-            switch ((appendList[i].type || '').split("/")[0]){
+            switch ((appendList[i].type || "").split("/")[0]){
                 // 根据文件类型用不同方法读文件
                 case "text": reader.readAsText(appendList[i],'utf8');break;
                 case "image": reader.readAsDataURL(appendList[i]);break;
@@ -84,17 +84,17 @@ class FileDropBox extends React.Component{
                 visible: true,
                 file: appendList[0].name,
             });
-            if((appendList[0].type || '').split("/")[0]==="image"){
+            if((appendList[0].type || "").split("/")[0]==="image"){
                 this.setState({
                     app: ["none", "block", "block"],
                 });
             }
-            if((appendList[0].name || '').split(".")[1]==="txt"){
+            if((appendList[0].name || "").split(".")[1]==="txt"){
                 this.setState({
                     app: ["block", "none", "block"],
                 });
             }
-            if((appendList[0].name || '').split(".")[1]==="md"){
+            if((appendList[0].name || "").split(".")[1]==="md"){
                 this.setState({
                     app: ["block", "none", "none"],
                 });

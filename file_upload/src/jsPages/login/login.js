@@ -13,22 +13,22 @@ class Login extends React.Component {
     handleLogin(){
         //登录事件处理
         const values = this.formRef.current.getFieldValue(); //获取表单内容
-        const userName  = values["userName"];
-        const password = values["password"];
+        const user  = values["userName"];
+        const pwd = values["password"];
         const remember = values["remember"];
-        if(userName && password){
+        if(user && pwd){
             axios.get("http://101.200.153.106:3389/login", {
                 // 向后端验证用户名和密码
                 params: {
-                    userName: userName,
-                    password: password,
-                }}).then(response => {
+                    userName: user,
+                    password: pwd,
+                }}).then((response) => {
                 let data = response.data; // 后端响应
                 if(data===1){
                     // 用户名和密码正确，登录
-                    this.props.setUserName(userName);
+                    this.props.setUserName(user);
                     if(remember){
-                        localStorage.setItem("lastUser", userName);
+                        localStorage.setItem("lastUser", user);
                     }
                     this.props.setVisibility(false);
                 }else {
