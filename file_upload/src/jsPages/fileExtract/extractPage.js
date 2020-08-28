@@ -1,10 +1,10 @@
 import React from "react";
 import FileList from "../../commonComponents/fileList";
-import "./extractPage.css"
-import {Button, Form} from "antd"
+import "./extractPage.css";
+import {Button, Form} from "antd";
 import { message } from "antd";
 import AppList from "../../commonComponents/appList";
-import axios from "axios"
+import axios from "axios";
 
 class ExtractPage extends React.Component{
     constructor(props) {
