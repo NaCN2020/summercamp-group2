@@ -2,7 +2,7 @@ import React from "react";
 import { Modal } from "antd";
 import "./appList.css";
 import {Link} from "react-router-dom";
-import {DropboxOutlined, EditOutlined, FontSizeOutlined, DollarOutlined} from "@ant-design/icons"
+import {DropboxOutlined, EditOutlined, FontSizeOutlined, DollarOutlined} from "@ant-design/icons";
 
 class AppList extends React.Component{
     handelClick(){
