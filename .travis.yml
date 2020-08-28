@@ -3,7 +3,7 @@ node_js:
   - "8" 			
 env:
     # it should change to the related token in codacy
-  - CODACY_PROJECT_TOKEN=bfa0e8358d794df199355b3f2587c7bc
+  - CODACY_PROJECT_TOKEN=2540179962bd46ae9f59ba2105ba9a80
 branches:
   only:
   - master    # 构建的分支
