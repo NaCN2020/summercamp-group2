@@ -1,7 +1,7 @@
 import React from "react";
 import { DeleteOutlined, PaperClipOutlined } from "@ant-design/icons";
 import { message } from "antd";
-import "./fileList.css"
+import "./fileList.css";
 import axios from "axios";
 
 class FileList extends React.Component{
