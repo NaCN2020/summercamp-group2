@@ -41,7 +41,7 @@ class FileDropBox extends React.Component{
     handleAddFile(e){
         // 文件输入框有新文件加入
         const objFile = e.currentTarget.files;
-        if(!objFile){
+        if(!objFile || objFile.length === 0){
             // 文件对象列表为空
             return ;
         }
@@ -56,6 +56,9 @@ class FileDropBox extends React.Component{
                 // 文件不存在，加入新文件列表
                 appendList.push(objFile[i]);
             }
+        }
+        if(appendList.length === 0){
+            return ;
         }
         for (let i=0;i<appendList.length;i++){
             files.push(appendList[i].name);
