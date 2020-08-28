@@ -34,7 +34,6 @@ class ExtractPage extends React.Component{
                     fileContent: <textarea className={"preview-text"} value={response.data||""} readOnly={true}/>,
                 });
             }).catch(e => {
-                console.log(e);
             });
         }
         else {
