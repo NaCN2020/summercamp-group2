@@ -9,7 +9,7 @@ class FileList extends React.Component{
     itemClick(fileName){
         // 列表元素点击事件
         this.props.showFileContent(fileName);
-    };
+    }
     handleDelete(fileName){
         // 删除图标点击事件
         let tempFiles = []; // 记录不删除的文件名
