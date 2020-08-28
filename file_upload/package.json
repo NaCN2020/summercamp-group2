@@ -5,7 +5,7 @@
   },
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://darrenqiaoo.github.io/summercamp-p5",
+  "homepage": "https://NaCN2020.github.io/summercamp-group2",
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --coverage&& cat ./coverage/lcov.info | coveralls",
+    "test": "jest --colors --coverage&& cat ./coverage/lcov.info | coveralls",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

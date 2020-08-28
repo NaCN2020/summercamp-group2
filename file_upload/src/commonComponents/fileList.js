@@ -1,7 +1,7 @@
 import React from "react";
 import { DeleteOutlined, PaperClipOutlined } from "@ant-design/icons";
 import { message } from "antd";
-import "./fileList.css"
+import "./fileList.css";
 import axios from "axios";
 
 class FileList extends React.Component{
@@ -28,7 +28,7 @@ class FileList extends React.Component{
         message.success(file+" has been deleted.");
     }
     render() {
-        const fList = this.props.files.map(f => {
+        const fList = this.props.files.map((f) => {
             // 将文件名映射成列表元素
             return (
                 <li key={f.toString()}>
