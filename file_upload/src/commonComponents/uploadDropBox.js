@@ -1,8 +1,8 @@
 import React from "react";
 import {message} from "antd";
 import {BulbOutlined, FileAddOutlined} from "@ant-design/icons";
-import "./uploadDropbox.css"
-import axios from "axios"
+import "./uploadDropbox.css";
+import axios from "axios";
 import AppList from "./appList";
 
 class FileDropBox extends React.Component{
@@ -73,7 +73,7 @@ class FileDropBox extends React.Component{
             };
             switch ((appendList[i].type || '').split("/")[0]){
                 // 根据文件类型用不同方法读文件
-                case "text": reader.readAsText(appendList[i],'utf8');break;
+                case "text": reader.readAsText(appendList[i],"utf8");break;
                 case "image": reader.readAsDataURL(appendList[i]);break;
                 default :
             }
