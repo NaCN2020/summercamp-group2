@@ -24,7 +24,7 @@ class AppList extends React.Component{
                             <span className={"appName"}>DropBox</span>
                         </div>
                     </li>
-                    <li onClick={() => this.handelClick()} style={{display: "none"}}>
+                    <li onClick={() => this.handelClick()} style={{display: this.props.app?this.props.app[0]:"block"}}>
                         <Link to={{pathname:"http://101.200.153.106:3000/markdown",
                                    search: encodeURIComponent(this.props.file)}}
                               target={"_blank"}>
@@ -34,7 +34,7 @@ class AppList extends React.Component{
                             </div>
                         </Link>
                     </li>
-                    <li onClick={() => this.handelClick()} style={{display: "none"}}>
+                    <li onClick={() => this.handelClick()} style={{display: this.props.app?this.props.app[1]:"block"}}>
                         <Link to={{pathname:"http://101.200.153.106:3000/invoice",
                                    search: encodeURIComponent(this.props.file)}}
                               target={"_blank"}>
@@ -44,7 +44,7 @@ class AppList extends React.Component{
                             </div>
                         </Link>
                     </li>
-                    <li onClick={() => this.handelClick()} style={{display: "none"}}>
+                    <li onClick={() => this.handelClick()} style={{display: this.props.app?this.props.app[2]:"block"}}>
                         <Link to={{pathname:"http://101.200.153.106:3000/translate",
                                    search: encodeURIComponent(this.props.file)}}
                               target={"_blank"}>
